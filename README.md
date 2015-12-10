@@ -15,7 +15,9 @@ Note the Firefox browser will open for each of the Web calls from Selenium but I
 	
 	5)  EMMA plugin for Spring STS used for test code coverage checking (More tests could be added but not completed due to time constraints 
 	
-	6)  Git - I have sent the packaged Spring boot jar to Git for convenience.
+	6)  Some HTML pages could be downloaded and saved so we have a constant state and copied locally for better testing for integration testing
+	
+	7)  Git 
 
 
 Installation instructions
