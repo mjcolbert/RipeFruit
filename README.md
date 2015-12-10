@@ -4,8 +4,11 @@ Project Specifications
 
 	2). Selenium Firefox Web Driver
 
-Selenium would be better to use HTMLUnitDriver headless browser if I could get it to work but I was receiving StackOverflow error etc as well as errors with the original HTMLUnit This was after realising I could not use JSoup due to the screen being made up of mostly javascript output. I also attempted using a new Java 8 only framework that I found with no success.
+Selenium would be better to use HtmlUnitDriver headless browser if I could get it to work but I was receiving StackOverflow error etc as well as errors with the original HTMLUnit This was after realising I could not use JSoup due to the screen being made up of mostly javascript output. I also attempted using a new Java 8 only framework that I found with no success.
 Note the Firefox browser will open for each of the Web calls from Selenium but I minimise it and move it off screen as soon as I can. 
+An example of HtmlUnitDriver error is
+
+Caused by: net.sourceforge.htmlunit.corejs.javascript.EvaluatorException: Exceeded maximum stack depth (script in http://www.sainsburys.co.uk/webapp/wcs/stores/servlet/C
 
 	3). Build and Dependency management with Maven
 
