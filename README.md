@@ -14,27 +14,33 @@ Note the Firefox browser will open for each of the Web calls from Selenium but I
 	5). Testing using Junit and Mockito as well as logging with log4j
 	
 	5)  EMMA plugin for Spring STS used for test code coverage checking (More tests could be added but not completed due to time constraints 
+	
+	6)  Git - I have sent the packaged Spring boot jar to Git for convenience.
 
 
 Installation instructions
 
-	Java 1.8 JDK is a requirement as is Firefox due to the Selenium limitations explained above.
+	Java 1.8 JDK is a requirement
+	Firefox due to the Selenium limitations explained above.
+	
 	The project can be imported into an Eclipse IDE as a Maven project if you have the integrated Maven version 
 	Maven may need to be installed if you do not have the integrated version.
+	
 	Maven package stage can be used to package up the build
 
 
 Test Instructions
 
 	All the Tests can be run from within Eclipse by right click on the src/test/java directory and selecting run as Junit Test 
-	They can also be run with Maven using the test stage
+	They can also be run with Maven using the test stage.
 
 Run Instructions
 
 	The application can be run from within eclipse by right clicking on the project and selecting run as .... Spring Boot Application 
 
-	From the command line you can run 
-		java -jar ...RipeFruit\target\RipeFruit-0.0.1-SNAPSHOT.jar
+	From the command line you can run from RipeFruit\target:
+	
+		java -jar RipeFruit-0.0.1-SNAPSHOT.jar
 
 
 
