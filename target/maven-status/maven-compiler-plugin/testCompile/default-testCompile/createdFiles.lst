@@ -1,0 +1,6 @@
+com\sainsburys\supermarket\contoller\impl\ScreenScraperDeafultTest.class
+com\sainsburys\supermarket\services\impl\CalculateReportTotalDefaultTest.class
+com\sainsburys\supermarket\services\impl\ConstructJsonOutputWithGsonTest.class
+com\sainsburys\supermarket\services\impl\FireFoxGetLoadedWebDriverTest.class
+com\sainsburys\supermarket\services\impl\CreateProductModelDefaultTest.class
+com\sainsburys\supermarket\services\impl\ParseProductsElementListFromPageDefaultTest.class
