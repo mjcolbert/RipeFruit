@@ -1,17 +1,19 @@
 Project Specifications
 
-	1). Spring Boot Project using Java 1.8
+	1). Spring Boot Project using Java 1.8 using Spring STS
 
 	2). Selenium Firefox Web Driver
 
 Selenium would be better to use HTMLUnitDriver headless browser if I could get it to work but I was receiving StackOverflow error etc as well as errors with   the original HTMLUnit This was after realising I could not use JSoup due to the screen being made up of mostly javascript output.
-Not the Firefox browser will open for each ot the Web calls from Selenium 
+Note the Firefox browser will open for each of the Web calls from Selenium but I minimise it and move it off screen as soon as I can. 
 
 	3). Build and Dependency management with Maven
 
-	4). gson to create the json from the model
+	4). GSON to create the JSON from the model
 
 	5). Testing using Junit and Mockito as well as logging with log4j
+	
+	5)  EMMA plugin for Spring STS used for test code coverage checking (More tests could be added but not completed due to time constraints 
 
 
 Installation instructions
