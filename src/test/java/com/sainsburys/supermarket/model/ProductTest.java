@@ -10,7 +10,7 @@ import com.sainsburys.supermarket.model.Product;
 public class ProductTest {
 
     @Test
-    public void testProcuCreations() {
+    public void testProductCreations() {
 	Product product = new Product("orange","15kb", new BigDecimal(10.5),"The ripe orange");
 	assertEquals("orange",product.getTitle());
 	assertEquals("15kb",product.getSize());

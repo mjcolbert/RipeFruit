@@ -11,5 +11,5 @@ public interface ScreenScraper {
     /**
      * @param url
      */
-    public void getRequestedScrapedInformation(String url);
+    public String getRequestedScrapedInformation(String url);
 }

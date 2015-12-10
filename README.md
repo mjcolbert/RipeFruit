@@ -13,9 +13,12 @@ Note the Firefox browser will open for each of the Web calls from Selenium but I
 
 	5). Testing using Junit and Mockito as well as logging with log4j
 	
-	5)  EMMA plugin for Spring STS used for test code coverage checking (More tests could be added but not completed due to time constraints 
+	5)  EMMA plugin for Spring STS used for test code coverage checking (More tests could be added but not completed due to time constraints
+		 A full integration test using Spring Boot could be included as well. Quite a bit of time spent with HTMLUNITDriver and HTMLUnit trying top get them to
+		 work properly instead of using Firfox.
 	
-	6)  Some HTML pages could be downloaded and saved so we have a constant state and copied locally for better testing for integration testing
+	6)  Some HTML pages could be down loaded and saved so we have a constant state and copied locally for better testing for integration 
+	    and Unit test.
 	
 	7)  Git 
 

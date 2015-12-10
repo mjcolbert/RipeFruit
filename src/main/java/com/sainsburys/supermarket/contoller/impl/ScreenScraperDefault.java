@@ -73,7 +73,7 @@ public class ScreenScraperDefault implements ScreenScraper
      * @see com.sainsburys.supermarket.services.ScreenScraper#getRequestedScrapedInformation(java.lang.String)
      */
     @Override
-    public void getRequestedScrapedInformation(String urlToScrape) 
+    public String getRequestedScrapedInformation(String urlToScrape) 
     {
 	WebDriver webDriver = getLoadedWebDriver.getLoadedWebDriverFromUrl(urlToScrape);
 	List<WebElement> listOfProductElements = parseProductElementListFromPage.getProductElementList(webDriver);
@@ -83,6 +83,7 @@ public class ScreenScraperDefault implements ScreenScraper
 	getLoadedWebDriver.shutWebDriver(webDriver);
 	String reportToPrint = constructJsonOutput.gsonToJsonConversion(productReport);
 	logger.info(reportToPrint);
+	return reportToPrint;
     }
 
 }
