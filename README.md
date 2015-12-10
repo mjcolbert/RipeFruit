@@ -4,7 +4,7 @@ Project Specifications
 
 	2). Selenium Firefox Web Driver
 
-Selenium would be better to use HTMLUnitDriver headless browser if I could get it to work but I was receiving StackOverflow error etc as well as errors with   the original HTMLUnit This was after realising I could not use JSoup due to the screen being made up of mostly javascript output.
+Selenium would be better to use HTMLUnitDriver headless browser if I could get it to work but I was receiving StackOverflow error etc as well as errors with the original HTMLUnit This was after realising I could not use JSoup due to the screen being made up of mostly javascript output. I also attempted using a new Java 8 only framework that I found with no success.
 Note the Firefox browser will open for each of the Web calls from Selenium but I minimise it and move it off screen as soon as I can. 
 
 	3). Build and Dependency management with Maven
@@ -18,9 +18,10 @@ Note the Firefox browser will open for each of the Web calls from Selenium but I
 
 Installation instructions
 
-	Java 1.8 JDK is a requirement as is Firefox due to the Selenium limitations
-	The project can be imported into an eclipse IDE as a maven project if you have the integrated maven version 
+	Java 1.8 JDK is a requirement as is Firefox due to the Selenium limitations explained above.
+	The project can be imported into an Eclipse IDE as a Maven project if you have the integrated Maven version 
 	Maven may need to be installed if you do not have the integrated version.
+	Maven package stage can be used to package up the build
 
 
 Test Instructions
