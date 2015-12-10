@@ -75,14 +75,22 @@ public class ScreenScraperDefault implements ScreenScraper
     @Override
     public String getRequestedScrapedInformation(String urlToScrape) 
     {
+	// Get the Web driver
 	WebDriver webDriver = getLoadedWebDriver.getLoadedWebDriverFromUrl(urlToScrape);
+	// Obtain a list of product elements from the page
 	List<WebElement> listOfProductElements = parseProductElementListFromPage.getProductElementList(webDriver);
+	// Navigate to each product to create the list of Products
 	List<Product> listOfProducts = createProductModel.parseProductElements(listOfProductElements);
+	// Work aout the total p[rice for all the products
 	String total = calculateReportTotal.calculateReportTotalUnitPrice(listOfProducts);
-	ProductReport productReport = new ProductReport(listOfProducts, total); 
+	// Create the Report Model with the product details and the total unit costs
+	ProductReport productReport = new ProductReport(listOfProducts, total);
+	// Shut browser
 	getLoadedWebDriver.shutWebDriver(webDriver);
+	// Create the Json from the model 
 	String reportToPrint = constructJsonOutput.gsonToJsonConversion(productReport);
 	logger.info(reportToPrint);
+	// |Return the report
 	return reportToPrint;
     }
 

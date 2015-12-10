@@ -10,6 +10,8 @@ An example of HtmlUnitDriver error is
 
 Caused by: net.sourceforge.htmlunit.corejs.javascript.EvaluatorException: Exceeded maximum stack depth (script in http://www.sainsburys.co.uk/webapp/wcs/stores/servlet/C
 
+Maybe this is a security feature to stop other organisations scraping with headless browsers quicker.
+
 	3). Build and Dependency management with Maven
 
 	4). GSON to create the JSON from the model
