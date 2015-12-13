@@ -1,7 +1,5 @@
 package com.sainsburys.supermarket.services.impl;
 
-import static org.junit.Assert.*;
-
 import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;

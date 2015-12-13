@@ -2,12 +2,6 @@ package com.sainsburys.supermarket.model;
 
 import java.math.BigDecimal;
 
-
-import org.apache.log4j.Logger;
-
-
-import com.sainsburys.supermarket.services.impl.CreateProductModelDefault;
-
 /**
  * @author Matthew
  * Domain Model class representing a single instance of a product.

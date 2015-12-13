@@ -29,12 +29,14 @@ public class FirefoxGetLoadedWebDriver implements GetLoadedWebDriver {
      */
     private static final Logger logger = Logger.getLogger(FirefoxGetLoadedWebDriver.class);
     
+    
     /**
      *  Constants used for the waiting logic
      */
     public static final String DOCUMENT_READYSTATE ="return document.readyState";
     public static final String COMPLETE = "complete";
-      
+    
+       
     /* (non-Javadoc)
      * @see com.sainsburys.supermarket.services.GetLoadedWebDriver#getDocumentFromUrl(java.lang.String)
      * 

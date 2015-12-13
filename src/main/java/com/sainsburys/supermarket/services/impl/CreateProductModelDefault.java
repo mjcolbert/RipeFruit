@@ -1,9 +1,5 @@
 package com.sainsburys.supermarket.services.impl;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.util.LinkedList;
@@ -18,7 +14,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.sainsburys.supermarket.model.Product;
 import com.sainsburys.supermarket.services.CreateProductModel;
-import com.sainsburys.supermarket.springconfig.RipeFruitConfig;
 
 /**
  * @author Matthew 

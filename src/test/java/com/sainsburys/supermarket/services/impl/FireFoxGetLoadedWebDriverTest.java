@@ -12,6 +12,7 @@ public class FireFoxGetLoadedWebDriverTest {
 
     private GetLoadedWebDriver getLoadedWebDriver;
     
+    
     @Before
     public void setup()
     {

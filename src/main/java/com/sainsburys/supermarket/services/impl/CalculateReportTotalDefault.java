@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.sainsburys.supermarket.model.Product;
 import com.sainsburys.supermarket.services.CalculateReportTotal;
 

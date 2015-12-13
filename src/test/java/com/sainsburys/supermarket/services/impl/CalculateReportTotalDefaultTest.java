@@ -9,7 +9,6 @@ import java.util.List;
 import org.junit.Test;
 
 import com.sainsburys.supermarket.model.Product;
-import com.sainsburys.supermarket.model.ProductReport;
 import com.sainsburys.supermarket.services.CalculateReportTotal;
 
 public class CalculateReportTotalDefaultTest {

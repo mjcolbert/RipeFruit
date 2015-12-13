@@ -27,7 +27,7 @@ public class ParseProductsElementListFromPageDefaultTest {
     {
 	this.mockDriver = mock(WebDriver.class);
 	this.mockElement = mock(WebElement.class);
-	List<WebElement> mockElements = new LinkedList();
+	List<WebElement> mockElements = new LinkedList<>();
 	mockElements.add(mockElement);
 	when(this.mockDriver.findElements(By.className(PRODUCT))).thenReturn(mockElements);
     }
