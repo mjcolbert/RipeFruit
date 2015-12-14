@@ -6,11 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import com.sainsburys.supermarket.RipeFruitRunner;
 import com.sainsburys.supermarket.contoller.ScreenScraper;
 import com.sainsburys.supermarket.contoller.impl.ScreenScraperDefault;
+import com.sainsburys.supermarket.services.CalculatePageSize;
 import com.sainsburys.supermarket.services.CalculateReportTotal;
 import com.sainsburys.supermarket.services.ConstructJsonOutput;
 import com.sainsburys.supermarket.services.CreateProductModel;
 import com.sainsburys.supermarket.services.GetLoadedWebDriver;
 import com.sainsburys.supermarket.services.ParseProductElementListFromPage;
+import com.sainsburys.supermarket.services.impl.CalculatePageSizeByBytes;
 import com.sainsburys.supermarket.services.impl.CalculateReportTotalDefault;
 import com.sainsburys.supermarket.services.impl.ConstructJsonOutputWithGson;
 import com.sainsburys.supermarket.services.impl.CreateProductModelDefault;
@@ -25,6 +27,11 @@ import com.sainsburys.supermarket.services.impl.ParseProductElementListFromPageD
  */
 @Configuration
 public class RipeFruitConfig {
+    @Bean(name="calculatePageSizeByBytes")
+    public CalculatePageSize calculatePageSizeByBytes() {
+        return new CalculatePageSizeByBytes();
+    }
+    
 
     @Bean(name="firefoxGetLoadedWebDriver")
     public GetLoadedWebDriver firefoxGetLoadedWebDriver() {
@@ -38,7 +45,7 @@ public class RipeFruitConfig {
     
     @Bean(name="createProductModelDefault")
     public CreateProductModel createProductModel() {
-        return new CreateProductModelDefault();
+        return new CreateProductModelDefault(calculatePageSizeByBytes());
     }
     
     @Bean(name="constructJsonOutputWithGson")

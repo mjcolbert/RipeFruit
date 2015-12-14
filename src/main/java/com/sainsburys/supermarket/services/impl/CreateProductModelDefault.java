@@ -1,18 +1,19 @@
 package com.sainsburys.supermarket.services.impl;
 
-import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.sainsburys.supermarket.model.Product;
+import com.sainsburys.supermarket.services.CalculatePageSize;
 import com.sainsburys.supermarket.services.CreateProductModel;
 
 /**
@@ -27,11 +28,23 @@ public class CreateProductModelDefault implements CreateProductModel {
     private static final String HREF = "href";
     private static final String PRODUCT_TEXT = "productText";
 
+    private CalculatePageSize calculatePageSize;
+    
     /**
      * Logger for the class
      */
     private static final Logger logger = Logger.getLogger(CreateProductModelDefault.class);
 
+    
+    /**
+     * 
+     */
+    public CreateProductModelDefault(CalculatePageSize calculatePageSize)
+    {
+	this.calculatePageSize = calculatePageSize;
+    }
+    
+    
     /*
      * (non-Javadoc)
      * 
@@ -62,12 +75,20 @@ public class CreateProductModelDefault implements CreateProductModel {
 	    if (webDriverProductPage != null && anchor != null)
 	    {
 		webDriverProductPage.get(anchor.getAttribute(HREF));
-	   	pageSizeBytes = setPageSize(webDriverProductPage);
-       	        description = webDriverProductPage.findElement(By.className(PRODUCT_TEXT)).getText();
-
+		pageSizeBytes = calculatePageSize.setPageSize(webDriverProductPage);
+		WebElement element = null;
+		try 
+		{
+		    element =  webDriverProductPage.findElement(By.className(PRODUCT_TEXT));
+		    description = element.getText();
+		}
+		catch (NoSuchElementException nsee)
+		{
+		    logger.error(nsee.getMessage(), nsee);
+		}
 	    }
 
-	  
+  
 	    // Get the unit price and set to a BigDecimal for precision
 	    String unitPriceFromSite = "";
 	    BigDecimal unitPrice = new BigDecimal(0);
@@ -86,33 +107,4 @@ public class CreateProductModelDefault implements CreateProductModel {
 	return products;
     }
 
-    /**
-     * @param webDriverProductPage
-     * @return Getting the size of the product page in kb. For the purpose of
-     *         this exercise I am assuming UTF-8 Encoding. You could also write
-     *         to a file and count the bytes.
-     */
-    private String setPageSize(WebDriver webDriverProductPage)
-    {
-	String productPageSource = webDriverProductPage.getPageSource();
-	byte[] utf8Bytes = null;
-	;
-	try {
-	    utf8Bytes = productPageSource.getBytes("UTF-8");
-	} catch (UnsupportedEncodingException error) {
-	    logger.error(error.getMessage(), error);
-	}
-	int pageSizeBytes = 0;
-	if (utf8Bytes != null) {
-	    pageSizeBytes = utf8Bytes.length;
-	} else {
-	    return "Not Known";
-	}
-	// append b or kb depending on the size
-	if (pageSizeBytes < 1024) {
-	    return Integer.toString(pageSizeBytes) + "b";
-	} else {
-	    return Integer.toString(pageSizeBytes / 1024) + "kb";
-	}
-    }
 }
